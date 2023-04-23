@@ -1,0 +1,10 @@
+local BASE_URL = "https://raw.githubusercontent.com/Alrbuddy/Scripts/main/"
+
+local gameID = tostring(game.PlaceId)
+
+local scriptUrl = BASE_URL .. gameID .. ".lua"
+
+local success, result = pcall(loadstring(game:HttpGet(scriptUrl)))
+if not success then
+    warn("Failed to load script: " .. tostring(result))
+end
